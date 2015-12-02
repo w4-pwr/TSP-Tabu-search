@@ -4,6 +4,7 @@
 public class TabuList {
 
     int [][] tabuList ;
+
     public TabuList(int numCities){
         tabuList = new int[numCities][numCities]; //city 0 is not used here, but left for simplicity
     }

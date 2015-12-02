@@ -6,7 +6,7 @@ public class Matrix {
 
     private int edgeCount;
 
-    public Matrix(final int size) {
+    public Matrix(int size) {
        edgeCount = size;
         matrix = new int[size][size];
         generateMatrix(size);
