@@ -22,7 +22,7 @@ public class TabuSearch {
         setupCurrentSolution();
         setupBestSolution();
 
-        System.out.println(matrix.calculateDistance(currSolution));
+
     }
 
     private void setupBestSolution() {
@@ -56,11 +56,8 @@ public class TabuSearch {
                 for (int k = 2; k < currSolution.length - 1; k++) {
                     if (j != k) {
                         swap(j, k);
-
                         int currCost = matrix.calculateDistance(currSolution);
-
                         if ((currCost < bestCost) && tabuList.tabuList[j][k] == 0) {
-
                             city1 = j;
                             city2 = k;
                             System.arraycopy(currSolution, 0, bestSolution, 0, bestSolution.length);
@@ -75,13 +72,10 @@ public class TabuSearch {
                 tabuList.decrementTabu();
                 tabuList.tabuMove(city1, city2);
             }
-
-
         }
 
-        System.out.println("Search done! \nBest Solution cost found = " + bestCost + "\nBest Solution :");
-        printSolution(bestSolution);
-
+       // System.out.println("Search done! \nBest Solution cost found = " + bestCost + "\nBest Solution :");
+        //printSolution(bestSolution);
     }
 
     private void swap(int i, int k) {
